@@ -65,8 +65,13 @@ class NewsBotTests(unittest.TestCase):
         self.assertIsNotNone(main.format_message(draft, history))
 
     def test_regional_news_does_not_automatically_become_city_news(self):
-        item = {"title": "В Новосибирскском крае открыли новую дорогу за городом",
+        item = {"title": "В Новосибирской области открыли новую дорогу за городом",
                 "link": "https://example.com/region"}
+        self.assertFalse(main.offline_draft(item, {"posts": [], "used_tags": []})["publish"])
+
+    def test_region_nominal_is_not_city(self):
+        item = {"title": "Новосибирская область объявила ремонт дорог в небольших посёлках",
+                "link": "https://example.com/oblast"}
         self.assertFalse(main.offline_draft(item, {"posts": [], "used_tags": []})["publish"])
 
     def test_offline_tags_change_if_used(self):
