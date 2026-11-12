@@ -1,0 +1,44 @@
+name: Новосибирск — первый пост в ВК
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/first-post.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: chetkiy-novosibirsk-vk-publisher
+  cancel-in-progress: false
+
+jobs:
+  first-post:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 6
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Validate bot before publishing
+        run: python -m unittest -v test_bot.py
+      - name: Publish one real welcome post to VK group 243227021
+        env:
+          NOVOSIBIRSK_VK_TOKEN: ${{ secrets.NOVOSIBIRSK_VK_TOKEN }}
+        run: python first_post_once.py
+      - name: Save post history
+        if: success()
+        run: |
+          if [[ -n "$(git status --porcelain history.json)" ]]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add history.json
+            git commit -m "Record first published Novosibirsk VK post"
+            git pull --rebase
+            git push
+          fi
