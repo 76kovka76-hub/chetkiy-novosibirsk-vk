@@ -171,7 +171,7 @@ def offline_draft(item, history):
             or len(re.findall(r"[.!?](?:\s|$)", title)) > 1):
         return {"publish": False}
     # An oblast-wide headline is not automatically about the city.
-    if "новосибирской области" in lower and not re.search(r"в новосибирске|городе новосибирске|города новосибирска", lower):
+    if re.search(r"новосибирск(?:ой|ая|ую)\s+област(?:и|ь)|новосибирском\s+районе", lower) and not re.search(r"в новосибирске|городе новосибирске|города новосибирска", lower):
         return {"publish": False}
     if not re.search(r"новосибирск", lower):
         return {"publish": False}
