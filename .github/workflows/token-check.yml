@@ -1,0 +1,39 @@
+name: Новосибирск — проверка токена и источников
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/token-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 8
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Test the Novosibirsk bot
+        run: python -m unittest -v test_bot.py
+      - name: Verify Novosibirsk community token exists
+        env:
+          NOVOSIBIRSK_VK_TOKEN: ${{ secrets.NOVOSIBIRSK_VK_TOKEN }}
+        shell: bash
+        run: |
+          if [[ -z "$NOVOSIBIRSK_VK_TOKEN" ]]; then
+            echo "::error::NOVOSIBIRSK_VK_TOKEN is missing"
+            exit 1
+          fi
+          echo "Novosibirsk VK community token exists (value hidden)."
+      - name: Verify live Novosibirsk news in safe preview
+        env:
+          DRY_RUN: "true"
+        run: python main.py
