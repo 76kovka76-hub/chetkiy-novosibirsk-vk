@@ -1,0 +1,27 @@
+name: Проверка бота Новосибирска
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  tests:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 7
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Verify 18 bot tests
+        run: python -m unittest -v test_bot.py
+      - name: Preview news and games without publishing
+        env:
+          DRY_RUN: "true"
+        run: python main.py
