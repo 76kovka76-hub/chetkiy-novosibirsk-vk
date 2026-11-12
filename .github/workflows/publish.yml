@@ -36,10 +36,10 @@ jobs:
             exit 1
           fi
           echo "Token for Novosibirsk exists (value hidden)."
-      - name: Generate safe preview of Novosibirsk news or game
+      - name: Publish fresh Novosibirsk news or subscriber game
         env:
           NOVOSIBIRSK_VK_TOKEN: ${{ secrets.NOVOSIBIRSK_VK_TOKEN }}
-          DRY_RUN: "true"
+          DRY_RUN: "false"
         run: python main.py
       - name: Save publishing history if changed
         if: success()
