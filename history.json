@@ -8,13 +8,29 @@
       "title": "Приветствие и знакомство",
       "text": "❄️ Братва, «Чёткий Новосибирск» на связи — кто из какого района, пишите в комменты!",
       "published_at": "2026-11-12T16:21:16.356317+00:00"
+    },
+    {
+      "slot": "2026-11-13-00",
+      "post_id": 2,
+      "source": "Google Новости",
+      "title": "В новосибирский бюджет 2027 года заложили расходы почти на 106 миллиардов - Новосибирские новости",
+      "link": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNWFVDTm9KVUxSbkpzOEk4SnVtTl9ydTUzb2t5cHlMbmZUTVBPMHJ6QUt2WlJ3M3I0Tk1kbnZ6NjhXRU5pY0tmM2dnUFl4SWFhZzdMTDJhVmtpRkI4S0ZST2JvX3lUR0FJdC1WNV9idDY3OG9Bd2xyWWhoQ0hETU9UNXV4TXJsVEhfUFRtLUJFc2hHWHlYNnZVeEtkNXNDeXBGbFE?oc=5",
+      "text": "🏙️ Городские, в новосибирский бюджет 2027 года заложили расходы почти на 106 миллиардов.",
+      "published_at": "2026-11-12T17:20:46.029434+00:00"
     }
   ],
-  "used_links": [],
+  "used_links": [
+    "https://news.google.com/rss/articles/CBMiogFBVV95cUxNWFVDTm9KVUxSbkpzOEk4SnVtTl9ydTUzb2t5cHlMbmZUTVBPMHJ6QUt2WlJ3M3I0Tk1kbnZ6NjhXRU5pY0tmM2dnUFl4SWFhZzdMTDJhVmtpRkI4S0ZST2JvX3lUR0FJdC1WNV9idDY3OG9Bd2xyWWhoQ0hETU9UNXV4TXJsVEhfUFRtLUJFc2hHWHlYNnZVeEtkNXNDeXBGbFE"
+  ],
   "used_tags": [
     "#НовосибирскНаСвязи",
     "#НовосибирскЗнакомимся",
-    "#НовосибирскНашЧат"
+    "#НовосибирскНашЧат",
+    "#НовосибирскГород",
+    "#НовосибирскНашГород",
+    "#НовосибирскГородскаяЖизнь"
   ],
-  "skipped_links": []
+  "skipped_links": [
+    "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNMUZWb015OXQtRFhiT01iLVdGTGFOb0hNNWdqRHBzaUc5MkhxZ19IaWQtUGw0SGxvSk15cFpjN1ljeFQ0S1I0dTlCTFJ0WWhYQTM4WlFpS2JTdDNzSWVuUjFybGE4U2RjbmcxajJsQUJ2eWo4YVAyQWpuNm1XOEllRUpGTnRVTkFvRDcxZ0Z0UGw2YUVpVGhUWi1SOVpFZllHdGtDNHJzNU5SWDZ4NFpyOXlUd1hiMjU1Q0FVME5FSW9hckowNGVVeDFCWDRqdXh4emg0ZmFROWRqM0pTd3pvT090NGdSWDlKNHBEV1I2bUE"
+  ]
 }
