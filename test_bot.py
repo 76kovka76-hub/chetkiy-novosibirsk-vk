@@ -44,7 +44,7 @@ class NewsBotTests(unittest.TestCase):
         self.assertIsNotNone(result)
         self.assertEqual(len(result.split("\n\n")[1].split()), 3)
         h["used_tags"] = ["#НовосибирскДороги"]
-        self.assertIsNone(main.format_message(draft, h))
+        self.assertIsNotNone(main.format_message(draft, h))
 
     def test_reject_unrelated_hashtags(self):
         bad = {
@@ -53,6 +53,16 @@ class NewsBotTests(unittest.TestCase):
             "hashtags": ["#Москва", "#Дороги", "#Ремонт"],
         }
         self.assertIsNone(main.format_message(bad, {"used_tags": []}))
+
+    def test_reject_numeric_and_synthetic_hashtags(self):
+        for bad_tag in ("#НовосибирскНовости2026", "#НовосибирскДороги_42", "#НовосибирскДороги_abc"):
+            with self.subTest(tag=bad_tag):
+                draft = {
+                    "publish": True,
+                    "sentence": "🏙️ Народ, городские новости.",
+                    "hashtags": [bad_tag, "#НовосибирскГород", "#НовосибирскСобытия"],
+                }
+                self.assertIsNone(main.format_message(draft, {"used_tags": []}))
 
     def test_offline_post_has_real_headline_and_three_tags(self):
         item = {"title": "В Новосибирске перекроют дорогу на улице Ленина из-за ремонта",
@@ -74,7 +84,7 @@ class NewsBotTests(unittest.TestCase):
                 "link": "https://example.com/oblast"}
         self.assertFalse(main.offline_draft(item, {"posts": [], "used_tags": []})["publish"])
 
-    def test_offline_tags_change_if_used(self):
+    def test_offline_tags_stay_readable_after_reuse(self):
         item = {"title": "В Новосибирске открыли ремонтируемый участок дороги для машин",
                 "link": "https://example.com/local/22"}
         history = {"posts": [], "used_tags": []}
@@ -83,7 +93,9 @@ class NewsBotTests(unittest.TestCase):
         history["used_tags"] = first["hashtags"]
         second = main.offline_draft(item, history)
         self.assertTrue(second["publish"])
-        self.assertFalse(set(first["hashtags"]) & set(second["hashtags"]))
+        self.assertEqual(first["hashtags"], second["hashtags"])
+        self.assertTrue(all(tag[1:].isalpha() for tag in second["hashtags"]))
+        self.assertIsNotNone(main.format_message(second, history))
 
     def test_game_prompt_can_replace_missing_news(self):
         now = datetime(2026, 11, 12, 9, 15, tzinfo=timezone.utc)  # 16:15 Novosibirsk
@@ -113,7 +125,7 @@ class NewsBotTests(unittest.TestCase):
                        "published_at": (now - timedelta(minutes=45)).isoformat()}]
         self.assertIsNone(game_draft({"posts": game_posts, "used_tags": []}, now))
 
-    def test_game_no_repeat_and_new_hashtags(self):
+    def test_game_no_repeat_with_readable_hashtags(self):
         now = datetime(2026, 11, 12, 9, 15, tzinfo=timezone.utc)
         h = {"posts": [], "used_tags": []}
         first = game_draft(h, now)
@@ -124,7 +136,7 @@ class NewsBotTests(unittest.TestCase):
         second = game_draft(h, now)
         self.assertIsNotNone(second)
         self.assertNotEqual(first["game_key"], second["game_key"])
-        self.assertFalse(set(first["hashtags"]) & set(second["hashtags"]))
+        self.assertTrue(all(tag[1:].isalpha() for tag in second["hashtags"]))
         self.assertIsNotNone(main.format_message(second, h))
 
     def test_news_cleans_publisher_suffix(self):
