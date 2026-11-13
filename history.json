@@ -80,6 +80,15 @@
       "link": "https://news.google.com/rss/articles/CBMiQkFVX3lxTFBQT2NqRE9RYzRnV3BiaTZFcGZLMTIzR01mNlRjYkxNR1paeVdvcUlaTkllUlF3MmprNGZoc3RoanBhdw?oc=5",
       "text": "🏙️ Народ, Авиалайнер из Владивостока 13 ноября вылетает в Новосибирск с пятичасовой задержкой - ДВ-РОСС.",
       "published_at": "2026-11-13T00:11:26.959992+00:00"
+    },
+    {
+      "slot": "2026-11-13-10",
+      "post_id": 10,
+      "source": "Google Новости",
+      "title": "В Новосибирске на улице Бориса Богаткова без снега появились первые дрифтеры - incidentia.ru",
+      "link": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPcm5Ycnc3QTZCVFV1R3NFVWFMU1BoRDA2MEdkb2JWaFd4OVJQQnlhWXZzUy1SaUlJcVNZYlREZGMtWHk3anhYTHM1SXo2bThzWF9tU1MzNF81MVJPaDN1M2hGOW5yQlBiajloVEVGUU9zV2pwdDh6RjBjREw0TTJpRlhhcHpJdw?oc=5",
+      "text": "🏙️ Братва, в Новосибирске на улице Бориса Богаткова без снега появились первые дрифтеры.",
+      "published_at": "2026-11-13T01:26:33.496488+00:00"
     }
   ],
   "used_links": [
@@ -90,7 +99,8 @@
     "https://news.google.com/rss/articles/CBMib0FVX3lxTE56VXRtWkNlY0MtWTRUaWFFbENEUjllR3BNYmhOdkRFYU5vNlJRdkJ6MWttM2dIZ2ZkZGdOeG0taWUyVUd0ZGFrZjVJM3hDYmN1Wl9Hc2pERGtaZGp3cnVfeEpvcEx2SFFMOHVwV09MY9IBdEFVX3lxTE1ndVdqajJxRk1WRzBjZlB6M09oazlwRVBUVnpJamk0UEdtNUZfbEdTc1NGblRsZFJza0xPNk93MmFxOENjYWp1X2ctN0dXRkFiQWZuOFJjSEJmSUdGNGpPeHFVMVp0dGhFVjVNZ2I3NE9kTXM5",
     "https://news.google.com/rss/articles/CBMiWEFVX3lxTFBGVk9ZVVZ5UzlmZUNDdzNIY2o2ckduVlBhdUhCeHBLeDlRQ1QyV29YRmFaaVUyWWpiU0F0c3ZJVlpaUGZIOHd6Z2VXQzJBQ05jRFpSRXpEVlo",
     "https://news.google.com/rss/articles/CBMipgFBVV95cUxPVzFxLUV6R3NOT1FyaEJRLThtM25VT1VnZ1ZWLUxjd2xPWWswcF82YXcyM2RtSGZ4TzZXLXJORFpZMHJPMTNHajBMZnZQVTFYbEJ2WGFVeGVuZnhSNjNQUG4yU0RjUm5tQUFFWjg3RHh4a3VfRzY3dGxuaGtJQUJFYlVJMUx2bGtMM09DdE8wcHpZWEMyTDVXNFlBLVQzSnVHSTRmRDVR",
-    "https://news.google.com/rss/articles/CBMiQkFVX3lxTFBQT2NqRE9RYzRnV3BiaTZFcGZLMTIzR01mNlRjYkxNR1paeVdvcUlaTkllUlF3MmprNGZoc3RoanBhdw"
+    "https://news.google.com/rss/articles/CBMiQkFVX3lxTFBQT2NqRE9RYzRnV3BiaTZFcGZLMTIzR01mNlRjYkxNR1paeVdvcUlaTkllUlF3MmprNGZoc3RoanBhdw",
+    "https://news.google.com/rss/articles/CBMihgFBVV95cUxPcm5Ycnc3QTZCVFV1R3NFVWFMU1BoRDA2MEdkb2JWaFd4OVJQQnlhWXZzUy1SaUlJcVNZYlREZGMtWHk3anhYTHM1SXo2bThzWF9tU1MzNF81MVJPaDN1M2hGOW5yQlBiajloVEVGUU9zV2pwdDh6RjBjREw0TTJpRlhhcHpJdw"
   ],
   "used_tags": [
     "#НовосибирскНаСвязи",
@@ -119,11 +129,15 @@
     "#НовосибирскГород_0570f91cc3",
     "#НовосибирскГород_d71f9fa39",
     "#НовосибирскГород_d71f9fa392",
-    "#НовосибирскГород_d71f9fa393"
+    "#НовосибирскГород_d71f9fa393",
+    "#НовосибирскГород_f2830b5b1",
+    "#НовосибирскГород_f2830b5b12",
+    "#НовосибирскГород_f2830b5b13"
   ],
   "skipped_links": [
     "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNMUZWb015OXQtRFhiT01iLVdGTGFOb0hNNWdqRHBzaUc5MkhxZ19IaWQtUGw0SGxvSk15cFpjN1ljeFQ0S1I0dTlCTFJ0WWhYQTM4WlFpS2JTdDNzSWVuUjFybGE4U2RjbmcxajJsQUJ2eWo4YVAyQWpuNm1XOEllRUpGTnRVTkFvRDcxZ0Z0UGw2YUVpVGhUWi1SOVpFZllHdGtDNHJzNU5SWDZ4NFpyOXlUd1hiMjU1Q0FVME5FSW9hckowNGVVeDFCWDRqdXh4emg0ZmFROWRqM0pTd3pvT090NGdSWDlKNHBEV1I2bUE",
     "https://news.google.com/rss/articles/CBMiYEFVX3lxTE0wUm11WkZoeUNfTmdiRF9KNG5yVE5XYVlaU01ZZW02NnNEcFhCVDdfc2Z1SFp1ZlJLbTVzZDdsTXFoMXBqclNmS0tER2dUYkE2d01rRFFPRzFSVXladEJucA",
-    "https://news.google.com/rss/articles/CBMihgJBVV95cUxOMjlmSnY4dy1oUkJ6NDdLeWVRdUNUTjY0eVFJWllnOEdBY1poaVNGOU92UUJQODRsdVYtU2RBYktQMmxYcExwY0s1YnVrVmJsS2NubFZJMS05enlzWFZxMjQwZXVNWVFlTkE0eER2emZmSDlleE5MLXVnaU1fOWcxT19yM2Jlelh1Z29YdUdUREEzSGJjVmJKbXEwMi1PNjNkUFdxekw3N0IzTWVNd3hodkFhSk94SHhKWUx4MWlucEpGNkRKMV85NEE1Q2dkYVY0QUJDWFotaWNoYmgzRE9pbExyY2hhbkNfWFpBLVpBV2N2MlkzZ0cyc3J1YWFrRDZvY3dycTZ3"
+    "https://news.google.com/rss/articles/CBMihgJBVV95cUxOMjlmSnY4dy1oUkJ6NDdLeWVRdUNUTjY0eVFJWllnOEdBY1poaVNGOU92UUJQODRsdVYtU2RBYktQMmxYcExwY0s1YnVrVmJsS2NubFZJMS05enlzWFZxMjQwZXVNWVFlTkE0eER2emZmSDlleE5MLXVnaU1fOWcxT19yM2Jlelh1Z29YdUdUREEzSGJjVmJKbXEwMi1PNjNkUFdxekw3N0IzTWVNd3hodkFhSk94SHhKWUx4MWlucEpGNkRKMV85NEE1Q2dkYVY0QUJDWFotaWNoYmgzRE9pbExyY2hhbkNfWFpBLVpBV2N2MlkzZ0cyc3J1YWFrRDZvY3dycTZ3",
+    "https://news.google.com/rss/articles/CBMikAFBVV95cUxNRUM3dDNNbHcxY1ZGdU94WGNXVW5VRXBhbC1JSGhDRDA0dFRRdUdER2dzU2YyamNHeGlsVUZuZ01SZUM1TGdCTGhZUi1NaHY0TW1zR3haREdLZ0RTTzVtMG1UNkpLWFNKaEZaZUFqcTA1TGNPUHViQUM4YUthZjNNeFFVaTVWcmtSR1B2cGlzX1fSAZgBQVVfeXFMTlhlblBvaXliXzIyZXRtd0ZjQVNza01fYjlKY29EM3lxQ21XQmRaNWtoMUZMb2hucEYtQmJfZmd2clI3SnpieHNsblY1ZmZnUUlXTFd2b3FPaHpPenRmRzFnMDVUeWJiUUk4N0lOZllxaGlZN2pZUHpLS1BnQXA4SlNFYmhrb3g3cWtOOURBanFIQlNOWlNtQkI"
   ]
 }
