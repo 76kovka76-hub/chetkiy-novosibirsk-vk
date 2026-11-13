@@ -3,6 +3,8 @@ import hashlib
 from datetime import datetime, timedelta
 from zoneinfo import ZoneInfo
 
+from news_quality import mentions_missing_media
+
 TZ = ZoneInfo("Asia/Novosibirsk")
 MAX_GAMES_PER_DAY = 4
 MIN_GAME_INTERVAL = timedelta(hours=3)
@@ -98,6 +100,7 @@ def game_draft(history, now):
 
     eligible = [p for p in PROMPTS
                 if p[0] not in recent_keys
+                and not mentions_missing_media(p[1])
                 and (p[3] is None or p[3][0] <= local.hour < p[3][1])]
     if not eligible:
         return None

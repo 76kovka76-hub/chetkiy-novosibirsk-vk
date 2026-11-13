@@ -15,6 +15,7 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 from engagement import game_draft
+from news_quality import is_self_contained_news, mentions_missing_media, source_url
 
 TZ = ZoneInfo("Asia/Novosibirsk")
 GROUP_ID = "243227021"
@@ -167,6 +168,10 @@ def offline_draft(item, history):
     title = re.sub(r"\s+\|\s+[^|]{2,90}$", "", title).strip()
     title = re.sub(r"\s+-\s+[^-]{3,50}$", "", title)
     lower = title.casefold()
+    # Only complete text-only news with a link to the original material.
+    original_link = source_url(item.get("link", ""))
+    if not original_link or not is_self_contained_news(title):
+        return {"publish": False}
     if (not 35 <= len(title) <= 190 or any(x in lower for x in BANNED)
             or len(re.findall(r"[.!?](?:\s|$)", title)) > 1):
         return {"publish": False}
@@ -199,7 +204,8 @@ def offline_draft(item, history):
     options = TAG_VARIANTS.get(topic, TAG_VARIANTS["Город"])
     start = seed % len(options)
     tags = ["#Новосибирск" + options[(start + i) % len(options)] for i in range(3)]
-    return {"publish": True, "sentence": sentence, "hashtags": tags}
+    return {"publish": True, "sentence": sentence, "hashtags": tags,
+            "source_url": original_link}
 
 def format_message(draft, history):
     if not draft.get("publish"):
@@ -207,6 +213,8 @@ def format_message(draft, history):
     sentence = re.sub(r"\s+", " ", str(draft.get("sentence", ""))).strip()
     tags = draft.get("hashtags")
     if not sentence or not isinstance(tags, list) or len(tags) != 3:
+        return None
+    if mentions_missing_media(sentence):
         return None
     if len(sentence.split()) > 35 or len(sentence) > 290 or "#" in sentence:
         return None
@@ -218,7 +226,13 @@ def format_message(draft, history):
     lowered = [x.casefold() for x in tags]
     if len(set(lowered)) != 3:
         return None
-    return sentence + "\n\n" + " ".join(tags)
+    message = sentence + "\n\n" + " ".join(tags)
+    if "source_url" in draft:
+        link = source_url(draft["source_url"])
+        if not link:
+            return None
+        message += "\n\nИсточник: " + link
+    return message
 
 
 def post_vk(message, time_slot):
